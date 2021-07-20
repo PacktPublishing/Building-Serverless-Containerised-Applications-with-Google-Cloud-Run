@@ -1,0 +1,13 @@
+apiVersion: eventing.knative.dev/v1beta1
+kind: Trigger
+metadata:
+  name: trigger-event-sample
+spec:
+  filter:
+    attributes:
+      type: event-sample
+  subscriber:
+    ref:
+      apiVersion: serving.knative.dev/v1
+      kind: Service
+      name: event-sample
